@@ -38,21 +38,79 @@ function BankAccount(userName, balance){
     thirdAccount.withdraw(300)
    
 
+    //QUESTION TWO
+
+    const taskList = {
+        tasks: [],
+      
+        addTask: function(task) {
+          this.tasks.push(task);
+          console.log("Added task: " + task);
+        },
+      
+        completeTask: function(task) {
+          let index = this.tasks.indexOf(task);
+          if (index > -1) {
+            this.tasks.splice(index, 1);
+            console.log("Completed task: " + task);
+          }
+        },
+      
+        listTasks: function() {
+          console.log("Tasks left:", this.tasks);
+        }
+      };
+      
+      taskList.addTask("Do exercises");
+      taskList.addTask("Go hiking");
+      taskList.addTask("Learn a language");
+      taskList.addTask("sleep early");
+      
+      taskList.completeTask("Go hiking");
+      
+      taskList.listTasks();
 
 
-//QUESTION THREE
-//Create a function with student as a function name
-//
-function Student(name,scores){
-this.name = name
-this.scores = scores
-this.average = average
+      // QUESTION FOUR
+      //Create an variable with an empty array 
 
-this.hasPassed = function(){
-if 
-}
-}
+      const ShoppingCart = {
+        items: [],
+      
+        addItem: function(item) {
+          this.items.push(item);
+          console.log(`Added ${item.name} and ${item.price}to cart`)
+        },
+      
+       getTotal(){
+        return this.items.reduce(total,item)=>{
+            total+item.price,0
+       }
+    
+       }
+    }
+      
+      ShoppingCart.addItem({ name: "books", price: 20 });
+      ShoppingCart.addItem({ name: "Pens", price: 30 });
+      ShoppingCart.addItem({ name: "Scissors", price: 50 });
+      
+      console.log("Total cost: $" + ShoppingCart.getTotal());
 
 
-//QURSTION THREE
-
+      //QUESTION FIVE
+        //Create variables that will hold the movie names and then pass the items it takes in
+        //WE ass a method isClassic then pass a condition 
+      let firstMovie = new Movie("The Originals", 2014, 5);
+      let secondMovie = new Movie("Outpost", 2023, 9);
+      let thirdMovie= new Movie("Dragons", 2012, 8);
+                 
+       console.log(`"${firstMovie.title}" is classic movie: ${firstMovie.isClassic()}`);
+      console.log(`Recommendation: ${firstMovie.recommend()}`);
+      
+              
+      console.log(`"${secondMovie.title}" is classic movie: ${secondMovie.isClassic()}`);
+      console.log(`Recommendation: ${secondMovie.recommend()}`);
+      
+              
+      console.log(`"${thirdMovie.title}" is classic movie: ${thirdMovie.isClassic()}`);
+      console.log(`Recommendation: ${thirdMovie.recommend()}`);
